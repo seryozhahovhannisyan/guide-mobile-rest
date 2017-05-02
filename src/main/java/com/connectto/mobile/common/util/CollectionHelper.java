@@ -15,5 +15,23 @@ public class CollectionHelper {
 		return !isEmpty(list);
 	}
 
+	public static String getContentAsString(Object[] array, String delimiter, boolean trimContents) {
+		if (array == null || array.length == 0)
+			return "";
+		if (delimiter == null || delimiter.length() == 0)
+			delimiter = ",";
 
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < array.length - 1; i++) {
+			if (trimContents) {
+				sb.append(String.valueOf(array[i]).trim());
+			} else {
+				sb.append(array[i]);
+			}
+			sb.append(delimiter);
+		}
+		sb.append(array[array.length - 1]);
+
+		return sb.toString();
+	}
 }

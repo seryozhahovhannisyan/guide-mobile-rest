@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
-@RestController
+//@RestController
 public class UserRestController {
 
     @Value("${jwt.header}")

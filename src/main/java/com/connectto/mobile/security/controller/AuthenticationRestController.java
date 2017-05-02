@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
-@RestController
+//@RestController
 public class AuthenticationRestController {
 
     @Value("${jwt.header}")
