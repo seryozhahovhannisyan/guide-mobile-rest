@@ -21,6 +21,7 @@ public class ChannelClick {
     @Column(name = "channel_id")
     private long channelId;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "click_date_time")
     private Date clickDateTime;
 

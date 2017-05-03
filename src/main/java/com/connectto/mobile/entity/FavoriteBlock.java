@@ -13,7 +13,7 @@ public class FavoriteBlock {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Long id;
 
     @Column(name = "partition_id")
     private int partitionId;
@@ -28,6 +28,7 @@ public class FavoriteBlock {
     private Integer favorite;
 
     @Column(name = "favorite_date_time")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date favoriteDateTime;
 
     @Column(name = "block")
@@ -37,6 +38,7 @@ public class FavoriteBlock {
     private String blockPassword;
 
     @Column(name = "block_date_time")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date blockDateTime;
 
     /*##################################################################################################################
@@ -44,11 +46,11 @@ public class FavoriteBlock {
      *##################################################################################################################
      */
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public FavoriteBlock setId(int id) {
+    public FavoriteBlock setId(Long id) {
         this.id = id;
         return this;
     }

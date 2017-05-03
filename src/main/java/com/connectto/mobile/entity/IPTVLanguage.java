@@ -1,8 +1,6 @@
 package com.connectto.mobile.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by Serozh on 7/20/2016.
@@ -11,6 +9,8 @@ import javax.persistence.Table;
 @Table(name = "iptv_languages")
 public class IPTVLanguage {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "language_id")
     private int languageId;
 

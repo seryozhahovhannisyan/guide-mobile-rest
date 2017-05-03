@@ -2,19 +2,34 @@ package com.connectto.mobile.entity;
 
 import com.connectto.mobile.common.util.StringHelper;
 
+import javax.persistence.*;
 import java.util.Properties;
 
-/**
- * Created by htdev001 on 3/24/15.
- */
+@Entity
+@Table(name = "iptv_user_rating_info")
 public class UserRatingInfo {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "user_id")
     private Long userId;
+
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "rating")
     private String rating;
+
+    @Column(name = "channel_category")
     private String channelCategory;
+
+    @Column(name = "watching_channel")
     private int watchingChannel;
+
+    @Column(name = "no_rating")
     private int noRating;
 
     public UserRatingInfo() {
@@ -39,59 +54,73 @@ public class UserRatingInfo {
 
     }
 
+
+    /*##################################################################################################################
+     *                                  GETTERS & SETTERS
+     *##################################################################################################################
+     */
+
+
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public UserRatingInfo setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public UserRatingInfo setUserId(Long userId) {
         this.userId = userId;
+        return this;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public UserRatingInfo setPassword(String password) {
         this.password = password;
+        return this;
     }
 
     public String getRating() {
         return rating;
     }
 
-    public void setRating(String rating) {
+    public UserRatingInfo setRating(String rating) {
         this.rating = rating;
-    }
-
-    public int getNoRating() {
-        return noRating;
-    }
-
-    public void setNoRating(int noRating) {
-        this.noRating = noRating;
+        return this;
     }
 
     public String getChannelCategory() {
         return channelCategory;
     }
 
-    public void setChannelCategory(String channelCategory) {
+    public UserRatingInfo setChannelCategory(String channelCategory) {
         this.channelCategory = channelCategory;
+        return this;
     }
 
     public int getWatchingChannel() {
         return watchingChannel;
     }
 
-    public void setWatchingChannel(int watchingChannel) {
+    public UserRatingInfo setWatchingChannel(int watchingChannel) {
         this.watchingChannel = watchingChannel;
+        return this;
+    }
+
+    public int getNoRating() {
+        return noRating;
+    }
+
+    public UserRatingInfo setNoRating(int noRating) {
+        this.noRating = noRating;
+        return this;
     }
 }

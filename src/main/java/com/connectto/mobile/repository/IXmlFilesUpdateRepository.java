@@ -1,10 +1,9 @@
 package com.connectto.mobile.repository;
 
-import com.connectto.mobile.entity.User;
+import com.connectto.mobile.entity.XmlFilesUpdate;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
-    User findByUsername(String username);
+public interface IXmlFilesUpdateRepository extends JpaRepository<XmlFilesUpdate, Long> {
 }

@@ -1,37 +1,54 @@
 package com.connectto.mobile.entity;
 
+import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by htdev001 on 2/11/15.
- */
+@Entity
+@Table(name = "core_xml_files_updates")
 public class XmlFilesUpdate {
 
-    private int id;
-    private Date russian_files;
-    private Date usa_files;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private long id;
 
-    public int getId() {
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "russian_files")
+    private Date russianFile;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "usa_files")
+    private Date usaFile;
+
+    /*##################################################################################################################
+     *                                  GETTERS & SETTERS
+     *##################################################################################################################
+     */
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public XmlFilesUpdate setId(long id) {
         this.id = id;
+        return this;
     }
 
-    public Date getRussian_files() {
-        return russian_files;
+    public Date getRussianFile() {
+        return russianFile;
     }
 
-    public void setRussian_files(Date russian_files) {
-        this.russian_files = russian_files;
+    public XmlFilesUpdate setRussianFile(Date russianFile) {
+        this.russianFile = russianFile;
+        return this;
     }
 
-    public Date getUsa_files() {
-        return usa_files;
+    public Date getUsaFile() {
+        return usaFile;
     }
 
-    public void setUsa_files(Date usa_files) {
-        this.usa_files = usa_files;
+    public XmlFilesUpdate setUsaFile(Date usaFile) {
+        this.usaFile = usaFile;
+        return this;
     }
 }
